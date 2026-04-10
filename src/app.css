@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
 @plugin "daisyui/theme" {
   name: "dark";
   default: false;
@@ -33,4 +34,10 @@
   --border: 1px;
   --depth: 1;
   --noise: 0;
+}
+
+@layer utilities {
+  .active {
+    @apply bg-accent text-accent-content;
+  }
 }

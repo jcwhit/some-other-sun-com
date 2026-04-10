@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { browser } from "$app/environment";
+
     let {
         paused,
         timeText,
@@ -29,6 +31,11 @@
                 );
             }
         });
+
+        if(browser) {
+            localStorage.setItem("borrowedTimeTTL", valueInMillis.toString());
+            localStorage.setItem("elapsedTime", "0");
+        }
 
         value = valueInMillis;
         editMode = false;
